@@ -1,0 +1,31 @@
+/* This file describes the flow of the program */
+
+1. Main - Display menu
+    Displays the menu for the user to select.
+    1.Reserve a spot
+    2.Check availability
+    3.Check out of Parking lot
+    4.Check Parking charges
+    5.Exit the menu
+2. User enters an integer to choose one of the above options.
+3. User input is validated. Program terminates if input is not an integer.
+4. User input choice is passed on to the Switch statement.
+    Case 1: Reserve a parking spot
+            Get user input Vehicle number and Vehicle type
+            Validate the Vehicle type. If the user input is out of range throws exception and exits.
+            Create Automob object with Vehicle number, type, spots it can occupy, entry time.
+            Create a unique pointer for Automob object
+            Move the unique pointer to a vector in the Parking_lot object
+            Update the available slots and Vehicles(vector<unique_ptr<Automob>>) in the Parking_lot object
+    Case 2: Display the Parking_lot object - Which displays available slots
+    Case 3: Call the check out method in the Parking lot class which does the following tasks
+                1. Get system time and update the exit time of the Automob in the Billing class
+                2. Calculate the total time occupied using the Billing class method calculate time
+                3. Calculate bill based on the total time and per hour charges in the Billing class.
+                4. Update the Automob object with total time, total fees.
+                5. Display the bill.
+                6. Delete the Automob object from the vector in the Parking lot class so the vehicle 
+                   details are removed.
+                7. Update the parking lot availability - since a slot becomes open during check out.
+    Case 4: Displays the charges per hour, 4 hrs and per day using the static variables from the Billing class.
+    Case 5: Exit from the main menu
